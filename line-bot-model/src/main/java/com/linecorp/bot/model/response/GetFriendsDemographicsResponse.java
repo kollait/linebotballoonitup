@@ -16,83 +16,83 @@
 
 package com.linecorp.bot.model.response;
 
-import java.util.ArrayList;
+import static java.util.Collections.emptyList;
+
 import java.util.List;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
-import com.linecorp.bot.model.response.GetFriendsDemographicsResponse.GetFriendsDemographicsResponseBuilder;
-
 import lombok.Builder;
+import lombok.Builder.Default;
 import lombok.Value;
 
 @Value
 @Builder
-@JsonDeserialize(builder = GetFriendsDemographicsResponseBuilder.class)
+@JsonDeserialize(builder = GetFriendsDemographicsResponse.GetFriendsDemographicsResponseBuilder.class)
 public class GetFriendsDemographicsResponse {
 
     @Value
     @Builder
-    @JsonDeserialize(builder = GenderWisePercentage.GenderWisePercentageBuilder.class)
-    static class GenderWisePercentage {
+    @JsonDeserialize(builder = GenderTile.GenderTileBuilder.class)
+    static class GenderTile {
         String gender;
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
-        public static class GenderWisePercentageBuilder{
+        public static class GenderTileBuilder {
             // Filled by lombok
         }
     }
 
     @Value
     @Builder
-    @JsonDeserialize(builder = AgeWisePercentage.AgeWisePercentageBuilder.class)
-    static class AgeWisePercentage {
+    @JsonDeserialize(builder = AgeTile.AgeTileBuilder.class)
+    static class AgeTile {
         String age;
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
-        public static class  AgeWisePercentageBuilder{
+        public static class AgeTileBuilder {
             // Filled by lombok
         }
     }
 
     @Value
     @Builder
-    @JsonDeserialize(builder = AreaWisePercentage.AreaWisePercentageBuilder.class)
-    static class AreaWisePercentage {
+    @JsonDeserialize(builder = AreaTile.AreaTileBuilder.class)
+    static class AreaTile {
         String area;
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
-        public static class  AreaWisePercentageBuilder{
+        public static class AreaTileBuilder {
             // Filled by lombok
         }
     }
 
     @Value
     @Builder
-    @JsonDeserialize(builder = OSWisePercentage.OSWisePercentageBuilder.class)
-    static class OSWisePercentage {
+    @JsonDeserialize(builder = AppTypeTile.AppTypeTileBuilder.class)
+    static class AppTypeTile {
         String appType;
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
-        public static class  OSWisePercentageBuilder{
+        public static class AppTypeTileBuilder {
             // Filled by lombok
         }
     }
 
     @Value
     @Builder
-    @JsonDeserialize(builder = SubscriptionWisePercentage.SubscriptionWisePercentageBuilder.class)
-    static class SubscriptionWisePercentage {
+    @JsonDeserialize(builder = SubscriptionPeriodTile.SubscriptionPeriodTileBuilder.class)
+    static class SubscriptionPeriodTile {
         String subscriptionPeriod;
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
-        public static class  SubscriptionWisePercentageBuilder{
+        public static class SubscriptionPeriodTileBuilder {
             // Filled by lombok
         }
     }
@@ -100,35 +100,40 @@ public class GetFriendsDemographicsResponse {
     /**
      * true if friend demographic information is available.
      */
-    Boolean available;
+    boolean available;
 
     /**
      * Percentage per gender.
      */
-    List<GenderWisePercentage> genders = new ArrayList<>();
+    @Default
+    List<GenderTile> genders = emptyList();
 
     /**
      * Percentage per age group.
      */
-    List<AgeWisePercentage> ages = new ArrayList<>();
+    @Default
+    List<AgeTile> ages = emptyList();
 
     /**
      * Percentage per area.
      */
-    List<AreaWisePercentage> areas = new ArrayList<>();
+    @Default
+    List<AreaTile> areas = emptyList();
 
     /**
      * Percentage by OS.
      */
-    List<OSWisePercentage> appTypes = new ArrayList<>();
+    @Default
+    List<AppTypeTile> appTypes = emptyList();
 
     /**
      * Percentage per friendship duration.
      */
-    List<SubscriptionWisePercentage> subscriptionPeriods = new ArrayList<>();
+    @Default
+    List<SubscriptionPeriodTile> subscriptionPeriods = emptyList();
 
     @JsonPOJOBuilder(withPrefix = "")
-    public static class  GetFriendsDemographicsResponseBuilder{
+    public static class GetFriendsDemographicsResponseBuilder {
         // Filled by lombok
     }
 }
