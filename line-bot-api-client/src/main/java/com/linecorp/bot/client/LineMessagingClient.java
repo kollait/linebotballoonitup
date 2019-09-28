@@ -343,7 +343,7 @@ public interface LineMessagingClient {
      *
      * @see <a href="https://developers.line.biz/en/reference/messaging-api/#get-demographic">Get friends demographics</a>
      */
-    CompletableFuture<GetFriendsDemographicsResponse> getFriendsDemographicsResponse();
+    CompletableFuture<GetFriendsDemographicsResponse> getFriendsDemographics();
 
     static LineMessagingClientBuilder builder(String channelToken) {
         return builder(FixedChannelTokenSupplier.of(channelToken));

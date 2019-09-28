@@ -246,7 +246,7 @@ public class LineMessagingClientImpl implements LineMessagingClient {
     }
 
     @Override
-    public CompletableFuture<GetFriendsDemographicsResponse> getFriendsDemographicsResponse() {
+    public CompletableFuture<GetFriendsDemographicsResponse> getFriendsDemographics() {
         return toFuture(retrofitImpl.getFriendsDemographics());
     }
 

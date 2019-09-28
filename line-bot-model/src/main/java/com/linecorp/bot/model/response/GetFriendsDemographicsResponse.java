@@ -36,7 +36,14 @@ public class GetFriendsDemographicsResponse {
     @Builder
     @JsonDeserialize(builder = GenderTile.GenderTileBuilder.class)
     static class GenderTile {
+        /**
+         * Gender string. Possible values: "male", "female", "unknown".
+         */
         String gender;
+
+        /**
+         * Percentage. Possible values: 0, 2.9, 37.6 etc.
+         */
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
@@ -49,7 +56,11 @@ public class GetFriendsDemographicsResponse {
     @Builder
     @JsonDeserialize(builder = AgeTile.AgeTileBuilder.class)
     static class AgeTile {
+        /**
+         * Age string. Possible values: "from50", "from0to14", "unknown" etc.
+         */
         String age;
+
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
@@ -62,7 +73,14 @@ public class GetFriendsDemographicsResponse {
     @Builder
     @JsonDeserialize(builder = AreaTile.AreaTileBuilder.class)
     static class AreaTile {
+        /**
+         * Area. The value returned depends on the country.
+         * Possible values[JP]: "北海道", "青森" etc.
+         * Possible values[TW]: "台北市", "新北市" etc.
+         * Possible values[TH]: "Bangkok", "Pattaya" etc.
+         */
         String area;
+
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
@@ -75,7 +93,11 @@ public class GetFriendsDemographicsResponse {
     @Builder
     @JsonDeserialize(builder = AppTypeTile.AppTypeTileBuilder.class)
     static class AppTypeTile {
+        /**
+         * Operating System. Possible values: "ios", "android", "others".
+         */
         String appType;
+
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
@@ -88,7 +110,11 @@ public class GetFriendsDemographicsResponse {
     @Builder
     @JsonDeserialize(builder = SubscriptionPeriodTile.SubscriptionPeriodTileBuilder.class)
     static class SubscriptionPeriodTile {
+        /**
+         * Subscription period. Possible values: "within7days", "within90days", "unknown" etc.
+         */
         String subscriptionPeriod;
+
         Double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
