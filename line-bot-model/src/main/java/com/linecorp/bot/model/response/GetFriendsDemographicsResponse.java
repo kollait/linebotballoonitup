@@ -44,7 +44,7 @@ public class GetFriendsDemographicsResponse {
         /**
          * Percentage. Possible values: 0, 2.9, 37.6 etc.
          */
-        Double percentage;
+        double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
         public static class GenderTileBuilder {
@@ -61,7 +61,7 @@ public class GetFriendsDemographicsResponse {
          */
         String age;
 
-        Double percentage;
+        double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
         public static class AgeTileBuilder {
@@ -81,7 +81,7 @@ public class GetFriendsDemographicsResponse {
          */
         String area;
 
-        Double percentage;
+        double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
         public static class AreaTileBuilder {
@@ -98,7 +98,7 @@ public class GetFriendsDemographicsResponse {
          */
         String appType;
 
-        Double percentage;
+        double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
         public static class AppTypeTileBuilder {
@@ -115,7 +115,7 @@ public class GetFriendsDemographicsResponse {
          */
         String subscriptionPeriod;
 
-        Double percentage;
+        double percentage;
 
         @JsonPOJOBuilder(withPrefix = "")
         public static class SubscriptionPeriodTileBuilder {
